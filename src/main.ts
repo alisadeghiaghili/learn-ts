@@ -63,7 +63,10 @@ class App {
     this.root.innerHTML = `
       <div class="shell">
         <header class="chrome">
-          <div class="brand">Learn<span>TS</span><span class="brand-sub">TIMESFM PATH</span></div>
+          <div class="brand">
+            <img class="brand-logo" src="./logo.svg" width="28" height="28" alt="" />
+            Learn<span>TS</span><span class="brand-sub">TIMESFM PATH</span>
+          </div>
           <nav class="chrome-nav" aria-label="primary">
             <button type="button" data-action="levels">Levels</button>
             <button type="button" data-action="goal">Goal</button>

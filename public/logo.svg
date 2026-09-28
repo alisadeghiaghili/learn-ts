@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="LearnTS">
+  <rect width="64" height="64" rx="14" fill="#0A1018"/>
+  <rect x="0.5" y="0.5" width="63" height="63" rx="13.5" stroke="#243545"/>
+  <!-- time axis -->
+  <path d="M10 50 H54" stroke="#2A9D8F" stroke-width="1.2" stroke-dasharray="2 3" opacity="0.7"/>
+  <!-- observed series -->
+  <path d="M11 38 L18 28 L25 32 L32 20 L38 26"
+        stroke="#5B8DEF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- forecast fan -->
+  <path d="M38 26 L46 22 L54 28 L54 34 L46 32 L38 26 Z"
+        fill="#2A9D8F" fill-opacity="0.22"/>
+  <path d="M38 26 L46 22 L54 28"
+        stroke="#9B7EDE" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- split marker -->
+  <circle cx="38" cy="26" r="3.2" fill="#F0B429"/>
+  <circle cx="38" cy="26" r="1.3" fill="#0A1018"/>
+</svg>

@@ -18,13 +18,22 @@
 
 .brand {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 8px;
   font-family: var(--font-display);
   font-size: 20px;
   font-weight: 600;
   color: var(--paper);
   white-space: nowrap;
+}
+
+.brand-logo {
+  width: 28px;
+  height: 28px;
+  display: block;
+  flex: none;
+  border-radius: 6px;
+  box-shadow: 0 0 0 1px #243545;
 }
 
 .brand span {
