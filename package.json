@@ -1,5 +1,5 @@
 {
-  "name": "learn-timeseries",
+  "name": "learn-ts",
   "version": "0.1.0",
   "private": true,
   "description": "Interactive time-series sandbox and leveled tutorial: fundamentals through TimesFM-style foundation forecasting.",
