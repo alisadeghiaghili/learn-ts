@@ -82,6 +82,30 @@
   white-space: nowrap;
 }
 
+.chrome-stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border: 1px solid color-mix(in srgb, var(--signal) 35%, #243545);
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--surface-2) 65%, transparent);
+  color: var(--chalk);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.chrome-stat .visitor-icon {
+  color: var(--signal);
+  flex: none;
+}
+
+.chrome-stat[hidden] {
+  display: none;
+}
+
 .body {
   display: grid;
   grid-template-columns: var(--rail) 1fr;

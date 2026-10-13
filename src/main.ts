@@ -18,6 +18,7 @@ import {
   type LevelProgress,
 } from "./ui/progress";
 import { MODEL_LABELS } from "./engine/models";
+import { formatVisitorCount, startVisitorCounter } from "./ui/visitor-counter";
 
 function escapeHtml(s: string): string {
   return s
@@ -57,6 +58,18 @@ class App {
       this.pushOut("");
       this.pushMeta(`Progress restored: ${summary.solvedCount} level(s) solved.`);
     }
+    void startVisitorCounter((count) => this.renderVisitors(count));
+  }
+
+  /** Unique-visitor stat in the header; stays hidden until a number is known. */
+  private renderVisitors(count: number): void {
+    const stat = this.root.querySelector<HTMLElement>("#visitor-stat");
+    const value = this.root.querySelector<HTMLElement>("#visitor-count");
+    if (!stat || !value) return;
+    const text = formatVisitorCount(count);
+    value.textContent = text;
+    stat.setAttribute("aria-label", `${text} unique visitors`);
+    stat.hidden = false;
   }
 
   private mount(): void {
@@ -78,6 +91,10 @@ class App {
             <button type="button" data-action="help">Help</button>
           </nav>
           <div class="chrome-meta" id="chrome-meta">sandbox</div>
+          <span class="chrome-stat" id="visitor-stat" role="img" title="Unique visitors" aria-label="Unique visitors" hidden>
+            <svg class="visitor-icon" viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0-2.21-2.69-4-6-4s-6 1.79-6 4v1h12v-1zm-1.07 0H3.07C3.56 11.83 5.48 11 8 11s4.44.83 4.93 2z"/></svg>
+            <span id="visitor-count"></span>
+          </span>
         </header>
         <div class="body">
           <aside class="rail" id="rail" aria-label="levels"></aside>
